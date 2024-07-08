@@ -4,7 +4,7 @@ services:
   app:
     build: ./flask_app/
     ports:
-      - "8000:8000"
+      - "8008:8000"
     environment:
       APP_NAME: "flask_app"
       STATSD_HOST: "statsd-exporter"
@@ -29,7 +29,7 @@ services:
   grafana:
     image: grafana/grafana:8.4.3
     ports:
-      - "3000:3000"
+      - "3001:3000"
     volumes:
       - ./etc/grafana/:/etc/grafana/provisioning/datasources
       - ./etc/dashboards.yaml:/etc/grafana/provisioning/dashboards/dashboards.yaml
