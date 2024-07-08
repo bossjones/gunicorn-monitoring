@@ -3,3 +3,4 @@ gunicorn==21.2.0
 prometheus-flask-exporter==0.23.0
 aiohttp-wsgi
 aiohttp
+aiohttp-prometheus-exporter
