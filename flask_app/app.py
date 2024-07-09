@@ -19,6 +19,17 @@ metrics = GunicornInternalPrometheusMetrics(app, path="/metrics", export_default
 metrics.info("app_info", "Application info", version="1.0.3")
 
 
+@app.route("/ping")
+def health():
+    """
+    Returns health status
+    ---
+
+    responses:
+      200:
+        description: Success
+    """
+    return "OK"
 
 @app.route("/")
 def hello_world():
