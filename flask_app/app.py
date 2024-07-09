@@ -69,8 +69,8 @@ def random_status():
 
 # aioapp = make_aiohttp_app(app)
 
-if __name__ != '__main__':
-    # Use gunicorn's logger to replace flask's default logger
-    gunicorn_logger = logging.getLogger('gunicorn.error')
-    app.logger.handlers = gunicorn_logger.handlers
-    app.logger.setLevel(gunicorn_logger.level)
+# if __name__ != '__main__':
+#     # Use gunicorn's logger to replace flask's default logger
+#     gunicorn_logger = logging.getLogger('gunicorn.error')
+#     app.logger.handlers = gunicorn_logger.handlers
+#     app.logger.setLevel(gunicorn_logger.level)
