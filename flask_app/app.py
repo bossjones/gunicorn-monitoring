@@ -6,8 +6,8 @@ from flask import Flask, Response
 from flask import Flask, Response, request
 # an extension targeted at Gunicorn deployments with an internal metrics endpoint
 from prometheus_flask_exporter.multiprocess import GunicornInternalPrometheusMetrics
-from aiohttp import web
-from aiohttp_wsgi import WSGIHandler
+# from aiohttp import web
+# from aiohttp_wsgi import WSGIHandler
 
 app = Flask(__name__)
 
@@ -50,13 +50,13 @@ def random_status():
     status_code = random.choice([200] * 6 + [300, 400, 400, 500])
     return Response("random status", status=status_code)
 
-def make_aiohttp_app(app):
-    wsgi_handler = WSGIHandler(app)
-    aioapp = web.Application()
-    aioapp.router.add_route('*', '/{path_info:.*}', wsgi_handler)
-    return aioapp
+# def make_aiohttp_app(app):
+#     wsgi_handler = WSGIHandler(app)
+#     aioapp = web.Application()
+#     aioapp.router.add_route('*', '/{path_info:.*}', wsgi_handler)
+#     return aioapp
 
-aioapp = make_aiohttp_app(app)
+# aioapp = make_aiohttp_app(app)
 
 if __name__ != '__main__':
     # Use gunicorn's logger to replace flask's default logger
